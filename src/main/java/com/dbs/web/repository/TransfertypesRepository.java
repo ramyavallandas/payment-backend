@@ -9,8 +9,5 @@ import com.dbs.web.beans.Transaction;
 import com.dbs.web.beans.Transfertypes;
 
 public interface TransfertypesRepository extends JpaRepository<Transfertypes,String>{
-	
-	
-	
 
 }

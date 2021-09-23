@@ -29,37 +29,12 @@ public class TransactionRestController {
 	@Autowired
 	private TransactionService transactionService;
 
-//	@Autowired
-//	private CustomerService customerService;
-//	
-//	@GetMapping("/{customerid}")
-//	public ResponseEntity<Object> findCustomerById(@PathVariable String customerid) 
-//	{
-//		try { 
-//			Transaction cust = this.transactionService.findCustomerCustomerById(customerid);
-//			return ResponseEntity.status(HttpStatus.OK)
-//					.body(cust);
-//					
-//			
-//		}catch (EntityNotFoundException e) {
-//			System.out.println("error");
-//			return ResponseEntity.status(HttpStatus.NOT_FOUND)
-//					.body(new ResponsePage("failure", e.getMessage()));
-//		}
-//	}
 
 	@PostMapping
 	public ResponseEntity<Object> transaction( @RequestBody TransactionRequest request ){
-		//this.transactionService.addTransaction(transaction);
 		return transactionService.processTransaction(request);
 	}
-	
-	
-//	@GetMapping
-//	public List<Transaction> gettransactions()
-//	{
-//		return this.transactionService.getTransactions();
-//	}
+
 	
 	@GetMapping("/{tid}")
 	public ResponseEntity<Object> findBankById(@PathVariable Integer tid) {
@@ -88,10 +63,7 @@ public class TransactionRestController {
 			return  ResponseEntity
 					.status(HttpStatus.ACCEPTED)
 					.body("Transaction was successful");
-					//.body("Transaction inserted with id "+id);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			
 			e.printStackTrace();
 			return  ResponseEntity
 					.status(HttpStatus.NOT_FOUND)

@@ -16,7 +16,5 @@ import com.dbs.web.service.EmployeeService;
 @RequestMapping("/")
 public class EmployeeRestController {
 	@Autowired
-	private EmployeeService employeeService; 
-	
-	
+	private EmployeeService employeeService;
 }

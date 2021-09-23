@@ -11,7 +11,6 @@ public class TransactionResponse {
 	private Customer sender;
 	private TransactionDetails transaction;
 	private Date date;
-	//private String senderBIC;
 	private String receiverBIC;
 	private String receiverAccountNumber;
 	private String receiverAccountName;
@@ -19,8 +18,6 @@ public class TransactionResponse {
 	public TransactionResponse(TransactionRequest request, Customer customer, Double currencyInINR, Double transferFee, Double totalAmount) {
 		this.sender=customer;
 		this.transaction=new TransactionDetails(transferFee,currencyInINR,totalAmount,request.getPayload().getTransfertypecode());
-		//this.date=LocalDate.now();
-		//this.senderBIC=request.getPayload().getSenderbic();
 		this.receiverAccountName=request.getPayload().getReceiveraccountholdername();
 		this.receiverAccountNumber=request.getPayload().getReceiveraccountholdernumber();
 		this.messageCode=request.getPayload().getMessagecode();

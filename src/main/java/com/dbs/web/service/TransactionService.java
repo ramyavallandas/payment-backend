@@ -65,13 +65,6 @@ public class TransactionService {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
 
 	@Transactional
 	public ResponseEntity<Object> processTransaction(TransactionRequest request) {
@@ -104,7 +97,6 @@ public class TransactionService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
 			
@@ -128,9 +120,7 @@ public class TransactionService {
 		customer.setClearbalance(customer.getClearbalance()-Math.abs(totalAmount));
 		customerService.save(customer);
 		Transaction savedTrans=saveTransactionItem(customer, totalAmount, payload,transferFee );
-//		Transaction t1 = new Transaction(request,customer,currencyInINR,transferFee,totalAmount);
-//		insertTransaction(t1);
-		
+
 		return ResponseEntity.status(HttpStatus.OK)
 				.body(savedTrans);
 		
@@ -175,7 +165,6 @@ public class TransactionService {
 	public long getCount() {
 		// TODO Auto-generated method stub
 		long count = transactionRepository.count();
-		
 		return count;
 	}
 

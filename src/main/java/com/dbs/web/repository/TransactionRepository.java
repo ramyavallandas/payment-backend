@@ -8,5 +8,5 @@ import com.dbs.web.beans.Transaction;
 
 
 public interface TransactionRepository extends JpaRepository<Transaction, Integer>{
-	//public List<Transaction> findCustomerCustomerId(String id);
+
 }
